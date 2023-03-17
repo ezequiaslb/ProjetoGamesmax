@@ -49,11 +49,13 @@
     </thead>
     <tbody>
       <!-- Loop para exibir os jogos cadastrados -->
+      
       <?php
         require_once 'conexao.php';
-        
+
         $sql = "SELECT * FROM jogos ORDER BY nome_jogo";
         $result = $conn->query($sql);
+       
         if ($result->num_rows > 0) {
           while ($row = $result->fetch_assoc()) {
             echo "<tr>";
@@ -66,7 +68,7 @@
             echo "</tr>";
           }
         } else {
-          echo "<tr><td colspan='6'>Nenhum jogo encontrado.</td></tr>";
+          echo "<tr><td colspan='20'>Nenhum jogo encontrado.</td></tr>";
         }
         $conn->close();
       ?>
